@@ -70,7 +70,7 @@ function stopClick() {
         
         blockCon.classList.remove("noClick")
 
-    }, 500);
+    }, 700);
 
     // setInterval(() => {
         
@@ -142,7 +142,6 @@ function check(first, second) {
 
         document.getElementById("end").play()
 
-        
         done(player); 
 
     }, 800);
@@ -153,20 +152,20 @@ function done(player) {
 
     let model = document.querySelector(".well")
 
-    let overlay = document.getElementById("overlay");
+    let overlay = document.getElementById("overlay1");
 
     let tryAtt1 = document.querySelector(".Number-attempts span").innerHTML
-
-    localStorage.setItem("playerName", player);
-
-    localStorage.setItem("attempts", attempts);
-
-    document.querySelector(".msg ").innerHTML =`🎉 Well done, ${player} 👏! You won after ${tryAtt1} mistakes 🙄
-        Try again and be better! 😘`
 
     model.style.display = "block";
     
     overlay.style.display = "block";
+
+    localStorage.setItem("playerName", player);
+
+    localStorage.setItem("attempts", tryAtt1);
+
+    document.querySelector(".msg ").innerHTML =`🎉 Well done, ${player} 👏! You won after ${tryAtt1} mistakes 🙄
+        Try again and be better! 😘`
 
     document.querySelector(".close").onclick = function () {
         
@@ -189,6 +188,7 @@ function done(player) {
 }
 
 window.onload = function () {
+    
     let savedName = localStorage.getItem("playerName");
 
     let savedAttempts = localStorage.getItem("attempts");
