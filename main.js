@@ -16,6 +16,8 @@ document.querySelector(".control-button span").onclick = function () {
 
     document.querySelector(".control-button").remove();
 
+    document.querySelector(".Number-attempts span").innerHTML = "0";
+
     // startGame()
 
 }
@@ -160,10 +162,6 @@ function done(player) {
     
     overlay.style.display = "block";
 
-    localStorage.setItem("playerName", player);
-
-    localStorage.setItem("attempts", tryAtt1);
-
     document.querySelector(".msg ").innerHTML =`🎉 Well done, ${player} 👏! You won after ${tryAtt1} mistakes 🙄
         Try again and be better! 😘`
 
@@ -186,25 +184,6 @@ function done(player) {
     }
 
 }
-
-window.onload = function () {
-    
-    let savedName = localStorage.getItem("playerName");
-
-    let savedAttempts = localStorage.getItem("attempts");
-
-    if (savedName) {
-
-        document.querySelector(".Player-name .name").innerHTML = savedName;
-    }
-
-    if (savedAttempts) {
-
-        document.querySelector(".Number-attempts span").innerHTML = savedAttempts;
-    }
-}
-
-
 
 // function startGame() {
 
