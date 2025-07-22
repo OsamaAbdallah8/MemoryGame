@@ -178,12 +178,12 @@ body {
     .foot{
         padding: 15px 10px;
         font-size: 12px;
-        margin-bottom: 20px;
+        margin-bottom: 110px;
     }
     .well{
-        font-size: 15px;
-        width: 83%;
-        height: 17%;
+        font-size: 14px;
+        width: 80%;
+        height: 14%;
     }
 }
 @media (min-width: 768px) and (max-width: 991px){
