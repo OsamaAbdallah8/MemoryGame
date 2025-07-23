@@ -1,26 +1,26 @@
-document.querySelector(".control-button span").onclick = function () {
+    document.querySelector(".control-button span").onclick = function () {
+    let yourName = prompt("Enter your name !") || "Unknown!";
 
-    let yourName = prompt("Enter your name !")
+    localStorage.setItem("playerName", yourName);
 
-    if (yourName == null || yourName == "") {
+    let players = JSON.parse(localStorage.getItem("allPlayers")) || [];
 
-        document.querySelector(".Player-name span").innerHTML = "Unkown!"
+    if (!players.includes(yourName)) {
 
-    } else {
+        players.push(yourName);
         
-        document.querySelector(".Player-name .name").innerHTML = yourName
-
+        localStorage.setItem("allPlayers", JSON.stringify(players));
     }
 
-    document.getElementById("start").play()
+    document.querySelector(".Player-name .name").innerHTML = yourName;
+
+    document.getElementById("start").play();
 
     document.querySelector(".control-button").remove();
 
     document.querySelector(".Number-attempts span").innerHTML = "0";
-
-    // startGame()
-
 }
+
 
 // let timerNum
 
